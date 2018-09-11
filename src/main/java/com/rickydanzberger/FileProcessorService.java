@@ -1,9 +1,12 @@
 package com.rickydanzberger;
 
+import java.awt.image.CropImageFilter;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 @Component
 public class FileProcessorService {
@@ -11,12 +14,22 @@ public class FileProcessorService {
 	@Autowired
 	FileReadingService frs;
 
-	public void processfile() {
+	public List<CensusReportDataRow> processfile(String filename) {
 		//frs = new FileReadingService();
-		List<String> lines = frs.readfile("2010_Census_Populations_by_Zip_Code.csv");
+		List<CensusReportDataRow> rows = new ArrayList<>();
+		List<String> lines = frs.readfile(filename);
 		for (String line : lines) {
-			System.out.println(line);
+			
+			String[] data = line.split(",");
+			if (data.length == 0 || StringUtils.isEmpty(data[0]))
+				{
+					continue;
+				}
+			rows.add(new CensusReportDataRow(data));
+			
+			//System.out.println(line);
 		}
+		return rows;
 	}
 
 }
