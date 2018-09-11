@@ -71,12 +71,12 @@ public class CensusReportDataRow
 	}
 
 
-	/*@Override
+	@Override
 	public String toString() {
 		return "CensusReportDataRow [ZipCode=" + ZipCode + ", TotalPopulation=" + TotalPopulation + ", MedianAge="
 				+ MedianAge + ", TotalMales=" + TotalMales + ", TotalFemales=" + TotalFemales + ", TotalHousehold="
 				+ TotalHousehold + ", AverageHouseHoldSize=" + AverageHouseHoldSize + "]";
-	}*/
+	}
 	
 	
 }
