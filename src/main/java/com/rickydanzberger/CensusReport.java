@@ -21,19 +21,12 @@ public class CensusReport
 	@Value("${report.filename}")
 	private String filename;
 	
-	@Autowired
-	@Qualifier("descReport")
-	private CensusReportResult censusReportResult;
-	
 	private FileProcessorService fps;
 	
 	public void generateReport ()
 	{
 		System.out.println("Loading filename: " + filename);
 		this.setRows(fps.processfile(filename));
-	    System.out.println(censusReportResult.getSorting());
-		
-		
 	
 	}
 	

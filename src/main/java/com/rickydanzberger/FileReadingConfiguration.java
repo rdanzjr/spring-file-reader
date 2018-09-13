@@ -30,48 +30,13 @@ public class FileReadingConfiguration {
 		return new PropertySourcesPlaceholderConfigurer();
 	}
 	
-	@Bean
-	@Qualifier("ascReport")
-	static CensusReportResult censusReportResultAsc ()
-	{
-		return new CensusReportResult("asc");
-	}
-	
-	@Bean
-	@Qualifier("descReport")
-	static CensusReportResult crimeReportResultDesc ()
-	{
-		return new CensusReportResult("desc");
-	}
 	
 	public static void main (String[] args)
 	{
 //		ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(FileReadingConfiguration.class);
-		ConfigurableApplicationContext context = SpringApplication.run(FileReadingConfiguration.class, args);
-		
-		List<CensusReport> reports = new ArrayList<>();
-		
-		reports.add((CensusReport) context.getBean("censusReport"));
-		reports.add((CensusReport) context.getBean("censusReport"));
-		reports.add((CensusReport) context.getBean("censusReport"));
-		reports.add((CensusReport) context.getBean("censusReport"));
-		reports.add((CensusReport) context.getBean("censusReport"));
-		
-//		CensusReport censusReport = (CensusReport) context.getBean("censusReport");	
-		for (CensusReport report : reports)
-		{
-			report.generateReport();
-			System.out.println(report);
-			
-		}
+		SpringApplication.run(FileReadingConfiguration.class, args);
 		
 		
-//		for (CensusReportDataRow row : censusReport.getRows())
-//		{
-//			System.out.println(row);
-//		}
-		
-	//	fps.processfile();
 	}
 	
 

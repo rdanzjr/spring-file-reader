@@ -20,8 +20,8 @@ public class CensusReportDataRow
 		this.setMedianAge(Double.valueOf(data[2]));
 		this.setTotalMales(Integer.valueOf(data[3]));
 		this.setTotalFemales(Integer.valueOf(data[4]));
-		//this.setTotalHousehold(Integer.valueOf(data[5]));
-		//this.setAverageHouseHoldSize(Double.valueOf(data[6]));
+		this.setTotalHousehold(Integer.valueOf(data[5]));
+		this.setAverageHouseHoldSize(Double.valueOf(data[6]));
 		
 		
 	}

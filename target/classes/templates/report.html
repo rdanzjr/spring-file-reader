@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>Census Report</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Zip Code</th>
+			<th>Total Population</th>
+			<th>Median Age</th>
+			<th>Total Males</th>
+			<th>Total Females</th>
+			<th>Total Household</th>
+			<th>Average HouseHold Size</th>
+		</tr>
+
+		<tr th:each="row : ${rows}">
+			<td th:text="${row.ZipCode}"></td>
+			<td th:text="${row.TotalPopulation}"></td>
+			<td th:text="${row.MedianAge}"></td>
+			<td th:text="${row.TotalMales}"></td>
+			<td th:text="${row.TotalFemales}"></td>
+			<td th:text="${row.TotalHousehold}"></td>
+			<td th:text="${row.AverageHouseHoldSize}"></td>
+		</tr>
+	</table>
+</body>
+
+</html>
