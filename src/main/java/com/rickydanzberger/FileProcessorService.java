@@ -1,6 +1,5 @@
 package com.rickydanzberger;
 
-import java.awt.image.CropImageFilter;
 import java.util.ArrayList;
 import java.util.List;
 

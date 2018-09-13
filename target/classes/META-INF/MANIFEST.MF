@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
 Built-By: macbook
 Build-Jdk: 9.0.1
+Implementation-Title: Spring Framework POC
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.rickydanzberger
+Implementation-Vendor: Pivotal Software, Inc.
 Created-By: Maven Integration for Eclipse
 

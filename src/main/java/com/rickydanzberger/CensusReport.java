@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 
 public class CensusReport 
 
@@ -18,12 +21,20 @@ public class CensusReport
 	@Value("${report.filename}")
 	private String filename;
 	
+	@Autowired
+	@Qualifier("descReport")
+	private CensusReportResult censusReportResult;
+	
 	private FileProcessorService fps;
 	
 	public void generateReport ()
 	{
+		System.out.println("Loading filename: " + filename);
+		this.setRows(fps.processfile(filename));
+	    System.out.println(censusReportResult.getSorting());
 		
-	this.setRows(fps.processfile(filename));
+		
+	
 	}
 	
 	public List<CensusReportDataRow> getRows() {
